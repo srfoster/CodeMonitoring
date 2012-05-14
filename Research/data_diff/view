@@ -1,0 +1,6 @@
+
+rm html/$1.java/*
+./smooth_data.rb DiffViewer/output/$1.java/
+./make_html.rb DiffViewer/output/$1.java/
+./compile html/$1.java/ > full.html
+open full.html

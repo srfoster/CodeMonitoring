@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="models.DeltaContentRecord" table="delta_contents">
+	<id name="id" column="id" type="long">
+		<generator class="native"></generator>
+	</id>
+	<property name="contents" column="contents"></property>
+	<many-to-one
+		name="delta"
+		column="delta_id"
+		class="models.DeltaRecord"
+		lazy="false" />
+</class>
+</hibernate-mapping>

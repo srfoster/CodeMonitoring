@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="models.AttributeRecord" table="attributes">
+	<id name="id" column="id" type="long">
+		<generator class="native"></generator>
+	</id>
+	<property name="name" column="name"></property>
+	<many-to-one
+		name="file"
+		column="file_id"
+		class="models.FileRecord"
+		lazy="false" />
+	
+	<set name="deltas" inverse="true" lazy="false">
+        <key column="attribute_id"/>
+        <one-to-many class="models.DeltaRecord"/>
+    </set>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="models.DeltaRecord" table="deltas">
+	<id name="id" column="id" type="long">
+		<generator class="native"></generator>
+	</id>
+	<property name="createdat" column="created_at" update="false"></property>
+	<many-to-one
+		name="attribute"
+		column="attribute_id"
+		class="models.AttributeRecord"
+		lazy="false" />
+	<set name="contents" inverse="true" lazy="false">
+        <key column="delta_id"/>
+        <one-to-many class="models.DeltaContentRecord" />
+    </set>
+</class>
+</hibernate-mapping>

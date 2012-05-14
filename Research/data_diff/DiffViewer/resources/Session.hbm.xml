@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="models.SessionRecord" table="sessions">
+	<id name="id" column="id" type="long">
+		<generator class="native"></generator>
+	</id>
+	<sql-insert>INSERT INTO sessions (id) VALUES (null)</sql-insert>
+</class>
+</hibernate-mapping>

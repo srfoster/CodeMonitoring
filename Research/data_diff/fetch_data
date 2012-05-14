@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+require 'aws/s3'
+
+AWS::S3::Base.establish_connection!(
+  :access_key_id     => 'AKIAJHPQ4WTC2VBM4ZBA', 
+  :secret_access_key => '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'
+)
+
+data_bucket = AWS::S3::Bucket.find("programmer_data")
+
+data_bucket.objects(:prefix => ARGV[0]).each do |object|
+  if(object.key =~ /#{ARGV[0]}.*\.db/)
+      File.open("DiffViewer/data/"+object.key, 'w') {|f| f.write(object.value) }
+  end
+end
+
+
+
+
+

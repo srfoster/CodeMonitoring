@@ -1,0 +1,1432 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+ "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+    <title>Differences between DiffViewer/output/ShapeSettings.java//ShapeSettings.java_002 and DiffViewer/output/ShapeSettings.java//ShapeSettings.java_003</title>
+    <style>
+TABLE { border-collapse: collapse; border-spacing: 0px; }
+TD.linenum { color: #909090; 
+             text-align: right;
+             vertical-align: top;
+             font-weight: bold;
+             border-right: 1px solid black;
+             border-left: 1px solid black; }
+TD.added { background-color: #DDDDFF; }
+TD.modified { background-color: #BBFFBB; }
+TD.removed { background-color: #FFCCCC; }
+TD.normal { background-color: #FFFFE1; }
+</style>
+
+</head>
+<body>
+<table>
+<tr><td width="50%">
+<table>
+    <tr>
+        <td class="modified">Modified lines:&nbsp;</td>
+        <td class="modified"><a href="#F1_1">1</a>, <a href="#F1_3">3</a></td>
+    </tr>
+    <tr>
+        <td class="added">Added line:&nbsp;</td>
+        <td class="added"><a href="#F2_4">4</a>, <a href="#F2_5">5</a>, <a href="#F2_6">6</a>, <a href="#F2_7">7</a>, <a href="#F2_8">8</a>, <a href="#F2_9">9</a>, <a href="#F2_10">10</a>, <a href="#F2_11">11</a>, <a href="#F2_12">12</a>, <a href="#F2_13">13</a>, <a href="#F2_14">14</a>, <a href="#F2_15">15</a>, <a href="#F2_16">16</a>, <a href="#F2_17">17</a>, <a href="#F2_18">18</a>, <a href="#F2_19">19</a>, <a href="#F2_20">20</a>, <a href="#F2_21">21</a>, <a href="#F2_22">22</a>, <a href="#F2_23">23</a>, <a href="#F2_24">24</a>, <a href="#F2_25">25</a>, <a href="#F2_26">26</a>, <a href="#F2_27">27</a>, <a href="#F2_28">28</a>, <a href="#F2_29">29</a>, <a href="#F2_30">30</a>, <a href="#F2_31">31</a>, <a href="#F2_32">32</a>, <a href="#F2_33">33</a>, <a href="#F2_34">34</a>, <a href="#F2_35">35</a>, <a href="#F2_36">36</a>, <a href="#F2_37">37</a>, <a href="#F2_38">38</a>, <a href="#F2_39">39</a>, <a href="#F2_40">40</a>, <a href="#F2_41">41</a>, <a href="#F2_42">42</a>, <a href="#F2_43">43</a>, <a href="#F2_44">44</a>, <a href="#F2_45">45</a>, <a href="#F2_46">46</a>, <a href="#F2_47">47</a>, <a href="#F2_48">48</a>, <a href="#F2_49">49</a>, <a href="#F2_50">50</a>, <a href="#F2_51">51</a>, <a href="#F2_52">52</a>, <a href="#F2_53">53</a>, <a href="#F2_54">54</a>, <a href="#F2_55">55</a>, <a href="#F2_56">56</a>, <a href="#F2_57">57</a>, <a href="#F2_58">58</a>, <a href="#F2_59">59</a>, <a href="#F2_60">60</a>, <a href="#F2_61">61</a>, <a href="#F2_62">62</a>, <a href="#F2_63">63</a>, <a href="#F2_64">64</a>, <a href="#F2_65">65</a>, <a href="#F2_66">66</a>, <a href="#F2_67">67</a>, <a href="#F2_68">68</a>, <a href="#F2_69">69</a>, <a href="#F2_70">70</a>, <a href="#F2_71">71</a>, <a href="#F2_72">72</a>, <a href="#F2_73">73</a>, <a href="#F2_74">74</a>, <a href="#F2_75">75</a>, <a href="#F2_76">76</a>, <a href="#F2_77">77</a>, <a href="#F2_78">78</a>, <a href="#F2_79">79</a>, <a href="#F2_80">80</a>, <a href="#F2_81">81</a>, <a href="#F2_82">82</a>, <a href="#F2_83">83</a>, <a href="#F2_84">84</a>, <a href="#F2_85">85</a>, <a href="#F2_86">86</a>, <a href="#F2_87">87</a>, <a href="#F2_88">88</a>, <a href="#F2_89">89</a>, <a href="#F2_90">90</a>, <a href="#F2_91">91</a>, <a href="#F2_92">92</a>, <a href="#F2_93">93</a>, <a href="#F2_94">94</a>, <a href="#F2_95">95</a>, <a href="#F2_96">96</a>, <a href="#F2_97">97</a>, <a href="#F2_98">98</a>, <a href="#F2_99">99</a>, <a href="#F2_100">100</a>, <a href="#F2_101">101</a>, <a href="#F2_102">102</a>, <a href="#F2_103">103</a>, <a href="#F2_104">104</a>, <a href="#F2_105">105</a>, <a href="#F2_106">106</a>, <a href="#F2_107">107</a>, <a href="#F2_108">108</a>, <a href="#F2_109">109</a>, <a href="#F2_110">110</a>, <a href="#F2_111">111</a>, <a href="#F2_112">112</a>, <a href="#F2_113">113</a>, <a href="#F2_114">114</a>, <a href="#F2_115">115</a>, <a href="#F2_116">116</a>, <a href="#F2_117">117</a>, <a href="#F2_118">118</a>, <a href="#F2_119">119</a>, <a href="#F2_120">120</a>, <a href="#F2_121">121</a>, <a href="#F2_122">122</a>, <a href="#F2_123">123</a>, <a href="#F2_124">124</a>, <a href="#F2_125">125</a>, <a href="#F2_126">126</a>, <a href="#F2_127">127</a>, <a href="#F2_128">128</a>, <a href="#F2_129">129</a>, <a href="#F2_130">130</a>, <a href="#F2_131">131</a>, <a href="#F2_132">132</a>, <a href="#F2_133">133</a>, <a href="#F2_134">134</a>, <a href="#F2_135">135</a>, <a href="#F2_136">136</a>, <a href="#F2_137">137</a>, <a href="#F2_138">138</a>, <a href="#F2_139">139</a>, <a href="#F2_140">140</a>, <a href="#F2_141">141</a>, <a href="#F2_142">142</a>, <a href="#F2_143">143</a>, <a href="#F2_144">144</a>, <a href="#F2_145">145</a>, <a href="#F2_146">146</a>, <a href="#F2_147">147</a>, <a href="#F2_148">148</a>, <a href="#F2_149">149</a>, <a href="#F2_150">150</a></td>
+    </tr>
+    <tr>
+        <td class="removed">Removed line:&nbsp;</td>
+        <td class="removed">None</td>
+    </tr>
+</table>
+</td>
+<td width="50%">
+<i>Generated by <a href="http://diff2html.tuxfamily.org"><b>diff2html</b></a><br/>
+&copy; Yves Bailly, MandrakeSoft S.A. 2001<br/>
+<b>diff2html</b> is licensed under the <a 
+href="http://www.gnu.org/copyleft/gpl.html">GNU GPL</a>.</i>
+</td></tr>
+</table>
+<hr/>
+<table>
+    <tr>
+        <th>&nbsp;</th>
+        <th width="45%"><strong><big>DiffViewer/output/ShapeSettings.java//ShapeSettings.java_002</big></strong></th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="45%"><strong><big>DiffViewer/output/ShapeSettings.java//ShapeSettings.java_003</big></strong></th>
+    </tr>
+    <tr>
+        <td width="16">&nbsp;</td>
+        <td>
+        3 lines<br/>
+        310 bytes<br/>
+        Last modified : Sat May 12 20:22:22 2012<br/>
+        <hr/>
+        </td>
+        <td width="16">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td>
+        150 lines<br/>
+        7558 bytes<br/>
+        Last modified : Sat May 12 20:22:22 2012<br/>
+        <hr/>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_1">1</a></td>
+        <td class="modified">//Time : 2012-04-19 21:27:48.571</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">1</td>
+        <td class="modified">//Time : 2012-04-19 21:27:49.726</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">2</td>
+        <td class="normal">//Files Open : /RainbowLiveWallpaper/src/com/missunicorn/rainbowlivewallpaper/RainbowWallpaperSettings.java /RainbowLiveWallpaper/src/com/missunicorn/rainbowlivewallpaper/RainbowWallpaper.java /RainbowLiveWallpaper/src/com/missunicorn/rainbowlivewallpaper/ShapeSettings.java</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">2</td>
+        <td class="normal">//Files Open : /RainbowLiveWallpaper/src/com/missunicorn/rainbowlivewallpaper/RainbowWallpaperSettings.java /RainbowLiveWallpaper/src/com/missunicorn/rainbowlivewallpaper/RainbowWallpaper.java /RainbowLiveWallpaper/src/com/missunicorn/rainbowlivewallpaper/ShapeSettings.java</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_3">3</a></td>
+        <td class="modified"></td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">3</td>
+        <td class="modified">package com.missunicorn.rainbowlivewallpaper;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_4">4</a></td>
+        <td class="added">import afzkl.development.mColorPicker.ColorPickerDialog;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_5">5</a></td>
+        <td class="added">import android.app.AlertDialog;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_6">6</a></td>
+        <td class="added">import android.content.DialogInterface;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_7">7</a></td>
+        <td class="added">import android.content.Intent;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_8">8</a></td>
+        <td class="added">import android.content.SharedPreferences;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_9">9</a></td>
+        <td class="added">import android.content.SharedPreferences.OnSharedPreferenceChangeListener;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_10">10</a></td>
+        <td class="added">import android.graphics.Color;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_11">11</a></td>
+        <td class="added">import android.net.Uri;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_12">12</a></td>
+        <td class="added">import android.os.Bundle;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_13">13</a></td>
+        <td class="added">import android.preference.ListPreference;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_14">14</a></td>
+        <td class="added">import android.preference.Preference;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_15">15</a></td>
+        <td class="added">import android.preference.Preference.OnPreferenceClickListener;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_16">16</a></td>
+        <td class="added">import android.preference.PreferenceActivity;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_17">17</a></td>
+        <td class="added">import android.preference.PreferenceScreen;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_18">18</a></td>
+        <td class="added">import android.util.Log;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_19">19</a></td>
+        <td class="added">import android.view.View;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_20">20</a></td>
+        <td class="added">import android.view.View.OnClickListener;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_21">21</a></td>
+        <td class="added">import android.widget.Button;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_22">22</a></td>
+        <td class="added">import com.appbrain.AppBrain;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_23">23</a></td>
+        <td class="added">import com.google.ads.AdRequest;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_24">24</a></td>
+        <td class="added">import com.google.ads.AdView;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_25">25</a></td>
+        <td class="added">public class ShapeSettings extends PreferenceActivity implements OnSharedPreferenceChangeListener {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_26">26</a></td>
+        <td class="added">&nbsp;&nbsp;private String TAG="ShapeSettings";</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_27">27</a></td>
+        <td class="added">&nbsp;&nbsp;protected AdView mAdView;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_28">28</a></td>
+        <td class="added">&nbsp;&nbsp;@Override protected void onCreate(  Bundle icicle){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_29">29</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(icicle);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_30">30</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;setContentView(R.layout.settings_layout);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_31">31</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceManager().setSharedPreferencesName(RainbowWallpaper.SHARED_PREFS_NAME);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_32">32</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;addPreferencesFromResource(R.xml.shape_settings);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_33">33</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_34">34</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;mAdView=(AdView)findViewById(R.id.adView);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_35">35</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;Button aboutButton=(Button)findViewById(R.id.aboutButton);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_36">36</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;aboutButton.setOnClickListener(new OnClickListener(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_37">37</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void onClick(      View v){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_38">38</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intent myIntent=new Intent(ShapeSettings.this,RainbowWallpaperAboutActivity.class);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_39">39</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShapeSettings.this.startActivity(myIntent);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_40">40</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_41">41</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_42">42</a></td>
+        <td class="added">);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_43">43</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;Button missUnicornButton=(Button)findViewById(R.id.missUnicornButton);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_44">44</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;missUnicornButton.setOnClickListener(new OnClickListener(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_45">45</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void onClick(      View v){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_46">46</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intent intent=new Intent(Intent.ACTION_VIEW);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_47">47</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intent.setData(Uri.parse("market://search?q=pub:Miss Unicorn"));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_48">48</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startActivity(intent);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_49">49</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_50">50</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_51">51</a></td>
+        <td class="added">);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_52">52</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;Button appBrainButton=(Button)findViewById(R.id.appBrainButton);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_53">53</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;appBrainButton.setOnClickListener(new OnClickListener(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_54">54</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void onClick(      View v){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_55">55</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AppBrain.getAds().showInterstitial(RainbowWallpaperSettings.this);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_56">56</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_57">57</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_58">58</a></td>
+        <td class="added">);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_59">59</a></td>
+        <td class="added">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_60">60</a></td>
+        <td class="added">&nbsp;&nbsp;@Override protected void onResume(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_61">61</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;super.onResume();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_62">62</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;mAdView.loadAd(new AdRequest());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_63">63</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;SharedPreferences prefs=getPreferenceManager().getSharedPreferences();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_64">64</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;onSharedPreferenceChanged(prefs,null);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_65">65</a></td>
+        <td class="added">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_66">66</a></td>
+        <td class="added">&nbsp;&nbsp;@Override protected void onDestroy(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_67">67</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;super.onDestroy();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_68">68</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_69">69</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;Preference backgroundColorPreference=findPreference("background_color");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_70">70</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;if (backgroundColorPreference != null)     backgroundColorPreference.setOnPreferenceClickListener(null);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_71">71</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;Preference shapeOutlineColorPreference=findPreference("shape_outline_color");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_72">72</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;if (shapeOutlineColorPreference != null)     shapeOutlineColorPreference.setOnPreferenceClickListener(null);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_73">73</a></td>
+        <td class="added">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_74">74</a></td>
+        <td class="added">&nbsp;&nbsp;final OnPreferenceClickListener backgroundColorListener=new OnPreferenceClickListener(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_75">75</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;@Override public boolean onPreferenceClick(    Preference preference){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_76">76</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final SharedPreferences prefs=getPreferenceManager().getSharedPreferences();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_77">77</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final ColorPickerDialog colorPickerDialog=new ColorPickerDialog(ShapeSettings.this,prefs.getInt("background_color",Color.parseColor(getString(R.string.background_color_default))));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_78">78</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorPickerDialog.setAlphaSliderVisible(false);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_79">79</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorPickerDialog.setButton(AlertDialog.BUTTON_POSITIVE,"Ok",new DialogInterface.OnClickListener(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_80">80</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override public void onClick(        DialogInterface dialog,        int which){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_81">81</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SharedPreferences.Editor editor=prefs.edit();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_82">82</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor.putInt("background_color",colorPickerDialog.getColor());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_83">83</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor.commit();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_84">84</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_85">85</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_86">86</a></td>
+        <td class="added">);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_87">87</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorPickerDialog.setButton(AlertDialog.BUTTON_NEGATIVE,"Cancel",new DialogInterface.OnClickListener(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_88">88</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override public void onClick(        DialogInterface dialog,        int which){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_89">89</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_90">90</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_91">91</a></td>
+        <td class="added">);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_92">92</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorPickerDialog.show();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_93">93</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_94">94</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_95">95</a></td>
+        <td class="added">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_96">96</a></td>
+        <td class="added">;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_97">97</a></td>
+        <td class="added">&nbsp;&nbsp;final OnPreferenceClickListener shapeOutlineColorListener=new OnPreferenceClickListener(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_98">98</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;@Override public boolean onPreferenceClick(    Preference preference){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_99">99</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final SharedPreferences prefs=getPreferenceManager().getSharedPreferences();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_100">100</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final ColorPickerDialog colorPickerDialog=new ColorPickerDialog(ShapeSettings.this,prefs.getInt("shape_outline_color",Color.parseColor(getString(R.string.shape_outline_color_default))));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_101">101</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorPickerDialog.setAlphaSliderVisible(false);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_102">102</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorPickerDialog.setButton(AlertDialog.BUTTON_POSITIVE,"Ok",new DialogInterface.OnClickListener(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_103">103</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override public void onClick(        DialogInterface dialog,        int which){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_104">104</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SharedPreferences.Editor editor=prefs.edit();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_105">105</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor.putInt("shape_outline_color",colorPickerDialog.getColor());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_106">106</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor.commit();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_107">107</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_108">108</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_109">109</a></td>
+        <td class="added">);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_110">110</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorPickerDialog.setButton(AlertDialog.BUTTON_NEGATIVE,"Cancel",new DialogInterface.OnClickListener(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_111">111</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override public void onClick(        DialogInterface dialog,        int which){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_112">112</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_113">113</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_114">114</a></td>
+        <td class="added">);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_115">115</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorPickerDialog.show();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_116">116</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_117">117</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_118">118</a></td>
+        <td class="added">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_119">119</a></td>
+        <td class="added">;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_120">120</a></td>
+        <td class="added">&nbsp;&nbsp;@Override public void onSharedPreferenceChanged(  SharedPreferences prefs,  String key){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_121">121</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceScreen().removeAll();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_122">122</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;addPreferencesFromResource(R.xml.shape_settings);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_123">123</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;Boolean displayShape=prefs.getBoolean("display_shape",Boolean.getBoolean(getString(R.string.display_shape_default)));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_124">124</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;Preference backgroundColorPreference=findPreference("background_color");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_125">125</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;Preference shapeOutlineStylePreference=findPreference("shape_outline_style");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_126">126</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;Preference shapeOutlineColorPreference=findPreference("shape_outline_color");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_127">127</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;if (displayShape) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_128">128</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundColorPreference.setOnPreferenceClickListener(backgroundColorListener);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_129">129</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean displayShapeOutline=prefs.getBoolean("display_shape_outline",Boolean.getBoolean(getString(R.string.display_shape_outline_default)));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_130">130</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (displayShapeOutline) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_131">131</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shapeOutlineColorPreference.setOnPreferenceClickListener(shapeOutlineColorListener);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_132">132</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_133">133</a></td>
+        <td class="added">&nbsp;else {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_134">134</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceScreen().removePreference(shapeOutlineStylePreference);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_135">135</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shapeOutlineColorPreference.setOnPreferenceClickListener(null);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_136">136</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceScreen().removePreference(shapeOutlineColorPreference);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_137">137</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_138">138</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_139">139</a></td>
+        <td class="added">&nbsp;else {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_140">140</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceScreen().removePreference(findPreference("shape"));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_141">141</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundColorPreference.setOnPreferenceClickListener(null);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_142">142</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceScreen().removePreference(backgroundColorPreference);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_143">143</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceScreen().removePreference(findPreference("fg_bg"));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_144">144</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceScreen().removePreference(findPreference("display_shape_outline"));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_145">145</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceScreen().removePreference(shapeOutlineStylePreference);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_146">146</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shapeOutlineColorPreference.setOnPreferenceClickListener(null);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_147">147</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getPreferenceScreen().removePreference(shapeOutlineColorPreference);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_148">148</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_149">149</a></td>
+        <td class="added">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_150">150</a></td>
+        <td class="added">}</td>
+    </tr>
+
+
+</table>
+<hr/>
+<i>Generated by <b>diff2html</b> on Sat May 12 23:35:32 2012<br/>
+Command-line:</i> <tt>/usr/bin/diff2html DiffViewer/output/ShapeSettings.java//ShapeSettings.java_002 DiffViewer/output/ShapeSettings.java//ShapeSettings.java_003</tt>
+
+</body>
+</html>
+

@@ -1,0 +1,372 @@
+import japa.parser.JavaParser;
+import japa.parser.ast.CompilationUnit;
+import japa.parser.ast.Node;
+import japa.parser.ast.body.BodyDeclaration;
+import japa.parser.ast.body.MethodDeclaration;
+import japa.parser.ast.body.TypeDeclaration;
+import japa.parser.ast.stmt.BlockStmt;
+import japa.parser.ast.stmt.Statement;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import difflib.Delta;
+import difflib.DiffUtils;
+import difflib.Patch;
+
+
+public class SmartDiffer {
+	String name;
+	
+	CompilationUnit current_code;
+	CompilationUnit last_code;
+	
+	private TreeMap<String,Integer> aggregations;
+	
+	private List<Rule> rules;
+	
+	
+	/***
+	 * 
+	 * 
+	 * Could probably collapse some of these rules into a single abstract rule:
+	 * 
+	 *  <Change Type> to <AST node Type> = <Number of changes>
+	 * 
+	 * 
+	 */
+	
+	
+	public SmartDiffer(String name)
+	{
+		this.name = name;
+		this.aggregations = new TreeMap<String,Integer>();
+		
+		rules = new ArrayList<Rule>();
+		
+		rules.add(new Rule("deletes"){
+			public boolean check(Delta d)
+			{
+				return d.getType() == Delta.TYPE.DELETE;
+			}
+		});
+		
+		rules.add(new Rule("inserts"){
+			public boolean check(Delta d)
+			{
+				return d.getType() == Delta.TYPE.INSERT;
+			}
+		});
+		
+		rules.add(new Rule("changes"){
+			public boolean check(Delta d)
+			{
+				return d.getType() == Delta.TYPE.CHANGE;
+			}
+		});
+		
+		rules.add(new Rule("abstract rule "){
+			public boolean check(Delta d)
+			{
+
+
+				if(d.getType() == Delta.TYPE.INSERT)
+				{
+					Node n1 = (Node) d.getOriginal().getLines().get(0);
+
+					key = "abstract rule " + "INSERT " + getClass(n1);
+					
+					return true;
+				}
+				else if(d.getType() == Delta.TYPE.INSERT)
+				{
+					Node n2 = (Node) d.getRevised().getLines().get(0);
+
+					key = "abstract rule " + "DELETE " + getClass(n2);
+					return true;
+				}
+				else if(d.getType() == Delta.TYPE.CHANGE)
+				{
+					Node n1 = (Node) d.getOriginal().getLines().get(0);
+					Node n2 = (Node) d.getRevised().getLines().get(0);
+
+					key = "abstract rule " + "CHANGE " + getClass(n1) + " to " +getClass(n2);
+					
+					return true;
+				}
+				
+				return false;
+				
+			}
+		});
+		
+		
+		rules.add(new Rule("private/protected method declarations"){
+			public boolean check(Delta d)
+			{
+				Node n = null;
+				
+				if(d.getOriginal().getLines().size() > 0)
+					n = (Node) d.getOriginal().getLines().get(0);
+				else if(d.getRevised().getLines().size() > 0)
+					n = (Node) d.getRevised().getLines().get(0);
+				
+				if(n == null)
+					return false;
+				
+				if(!(n instanceof MethodDeclaration))
+					return false;
+				
+				MethodDeclaration md = (MethodDeclaration) n;
+				
+				//Hack to check if it's private/protected
+				
+				String[] segs = md.toString().split("\\s");
+				
+				if(segs[0].equals("public") || segs[1].equals("public") || segs[0].equals("public"))
+					return false;
+				
+				return true;
+			}
+		});
+		
+		rules.add(new Rule("public method declarations"){
+			public boolean check(Delta d)
+			{
+				Node n = null;
+				
+				if(d.getOriginal().getLines().size() > 0)
+					n = (Node) d.getOriginal().getLines().get(0);
+				else if(d.getRevised().getLines().size() > 0)
+					n = (Node) d.getRevised().getLines().get(0);
+				
+				if(n == null)
+					return false;
+				
+				if(!(n instanceof MethodDeclaration))
+					return false;
+				
+				MethodDeclaration md = (MethodDeclaration) n;
+				
+				//Hack to check if it's private/protected
+				
+				String[] segs = md.toString().split("\\s");
+				
+				if(segs[0].equals("public") || segs[1].equals("public") || segs[0].equals("public"))
+					return true;
+				
+				return false;
+			}
+		});
+		
+		rules.add(new Rule("changes to method "){
+			public boolean check(Delta d)
+			{
+				Node n = null;
+				
+				if(d.getOriginal().getLines().size() > 0)
+					n = (Node) d.getOriginal().getLines().get(0);
+				else if(d.getRevised().getLines().size() > 0)
+					n = (Node) d.getRevised().getLines().get(0);
+				
+				if(n == null)
+					return false;
+				
+				if(!(n instanceof MethodDeclaration))
+					return false;
+				
+				MethodDeclaration md = (MethodDeclaration) n;
+				
+				this.key = "changes to method " + md.getName();
+				
+				return true;
+			}
+		});
+		
+		rules.add(new Rule("changes to ast node type "){
+			public boolean check(Delta d)
+			{
+				Node n = null;
+				
+				if(d.getOriginal().getLines().size() > 0)
+					n = (Node) d.getOriginal().getLines().get(0);
+				else if(d.getRevised().getLines().size() > 0)
+					n = (Node) d.getRevised().getLines().get(0);
+				
+				if(n == null)
+					return false;
+				
+				String long_name = n.getClass().toString();
+				String[] segs = long_name.split("\\.");
+				String class_name = segs[segs.length-1];
+				
+				this.key = "changes to ast node type " + class_name.toString();
+				
+				return true;
+			}
+		});
+	}
+	
+	public String getClass(Node o)
+	{
+		String long_name = o.getClass().toString();
+		String[] segs = long_name.split("\\.");
+		
+		return segs[segs.length -1];
+	}
+	
+	public void handleFile(int count) throws IOException
+	{
+		String file_name = String.format("output/"+name+".java/" + name +".java_%03d", count);
+		current_code = parse(file_name);
+		//System.out.println(file_name);
+		if(last_code != null)
+		{
+	        TypeDeclaration type1 = current_code.getTypes().get(0);
+	        TypeDeclaration type2 = last_code.getTypes().get(0);
+	        
+			diffTypes(type1,type2);
+		}
+		
+		last_code = current_code;
+	}
+	
+	public void diffTypes(TypeDeclaration type1, TypeDeclaration type2)
+	{
+        List<BodyDeclaration> members1 = type1.getMembers();
+        List<BodyDeclaration> members2 = type2.getMembers();
+
+        Patch patch = DiffUtils.diff(members1, members2);
+        Patch text_patch = DiffUtils.diff(Arrays.asList(current_code.toString().split("\\n")), Arrays.asList(last_code.toString().split("\\n")));
+
+        for (Delta delta: patch.getDeltas()) {
+              
+        	//System.out.println(delta);
+        	
+        	characterizeDelta(delta);
+        	
+        	if(delta.getType() == Delta.TYPE.CHANGE)
+        	{
+        		if(delta.getOriginal().getLines().get(0) instanceof TypeDeclaration && delta.getRevised().getLines().get(0) instanceof TypeDeclaration)
+        		{
+        			diffTypes((TypeDeclaration)delta.getOriginal().getLines().get(0),(TypeDeclaration)delta.getRevised().getLines().get(0));
+        		}
+        		
+        		if(delta.getOriginal().getLines().get(0) instanceof MethodDeclaration && delta.getRevised().getLines().get(0) instanceof MethodDeclaration)
+        		{
+        			diffMethods((MethodDeclaration)delta.getOriginal().getLines().get(0),(MethodDeclaration)delta.getRevised().getLines().get(0));
+        		}
+        	}
+        }
+	}
+	
+	private void diffMethods(MethodDeclaration m1, MethodDeclaration m2)
+	{
+		BlockStmt b1 = m1.getBody();
+		BlockStmt b2 = m2.getBody();
+		
+        diffBlocks(b1,b2);
+	}
+	
+	private void diffBlocks(BlockStmt b1, BlockStmt b2)
+	{
+		List<Statement> statements1 = b1.getStmts();
+		List<Statement> statements2 = b2.getStmts();
+		
+        Patch patch = DiffUtils.diff(statements1, statements2);
+
+        for (Delta delta: patch.getDeltas()) {
+    		if(delta.getType() == Delta.TYPE.CHANGE && delta.getOriginal().getLines().get(0) instanceof BlockStmt && delta.getRevised().getLines().get(0) instanceof BlockStmt)
+    		{
+    			diffBlocks((BlockStmt)delta.getOriginal().getLines().get(0),(BlockStmt)delta.getRevised().getLines().get(0));
+    		}
+    		
+    		characterizeDelta(delta);
+        }
+	}
+	
+	private void characterizeDelta(Delta delta) {
+		
+		for(Rule r : rules)
+		{
+			r.fire(delta);
+		}
+	
+	}
+
+	public CompilationUnit parse(String file_name) throws IOException
+	{
+		FileInputStream in = new FileInputStream(file_name);
+
+        CompilationUnit cu = null;
+        try {
+            // parse the file
+            cu = JavaParser.parse(in);
+        } catch(Exception e){
+        	e.printStackTrace();
+        } finally {
+            in.close();
+        }
+
+        return cu;
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		int count = 0;
+		
+		SmartDiffer differ = new SmartDiffer("RainbowWallpaper");
+		
+		while(true)
+		{
+			try{
+				differ.handleFile(count++);
+			}catch(Exception e){
+				e.printStackTrace();
+				break;
+			}
+		}
+		
+		for(String key : differ.getAggregations().keySet())
+		{
+			System.out.println(key + " = " + differ.getAggregations().get(key));
+		}
+	}
+	
+	public Map<String,Integer> getAggregations()
+	{
+		return aggregations;
+	}
+	
+
+	public abstract class Rule
+	{
+		public String key;
+		
+		public Rule(String key)
+		{
+			this.key = key;
+		}
+
+		public void fire(Delta delta)
+		{
+			if(check(delta))
+			{
+				if(aggregations.get(key) == null)
+				{
+					aggregations.put(key, 0);
+				}
+				aggregations.put(key, aggregations.get(key) + 1);
+			}
+		}
+		
+		abstract public boolean check(Delta delta);
+	}
+	
+}

@@ -1,0 +1,2926 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+ "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+    <title>Differences between DiffViewer/output/AnalysisResults.java//AnalysisResults.java_004 and DiffViewer/output/AnalysisResults.java//AnalysisResults.java_005</title>
+    <style>
+TABLE { border-collapse: collapse; border-spacing: 0px; }
+TD.linenum { color: #909090; 
+             text-align: right;
+             vertical-align: top;
+             font-weight: bold;
+             border-right: 1px solid black;
+             border-left: 1px solid black; }
+TD.added { background-color: #DDDDFF; }
+TD.modified { background-color: #BBFFBB; }
+TD.removed { background-color: #FFCCCC; }
+TD.normal { background-color: #FFFFE1; }
+</style>
+
+</head>
+<body>
+<table>
+<tr><td width="50%">
+<table>
+    <tr>
+        <td class="modified">Modified lines:&nbsp;</td>
+        <td class="modified"><a href="#F1_1">1</a>, <a href="#F1_2">2</a>, <a href="#F1_4">4</a>, <a href="#F1_10">10</a>, <a href="#F1_25">25</a>, <a href="#F1_27">27</a>, <a href="#F1_28">28</a>, <a href="#F1_29">29</a>, <a href="#F1_30">30</a>, <a href="#F1_31">31</a>, <a href="#F1_32">32</a>, <a href="#F1_33">33</a>, <a href="#F1_34">34</a>, <a href="#F1_35">35</a>, <a href="#F1_36">36</a>, <a href="#F1_37">37</a>, <a href="#F1_38">38</a>, <a href="#F1_39">39</a>, <a href="#F1_40">40</a>, <a href="#F1_41">41</a>, <a href="#F1_42">42</a>, <a href="#F1_43">43</a>, <a href="#F1_44">44</a>, <a href="#F1_45">45</a>, <a href="#F1_46">46</a>, <a href="#F1_50">50</a>, <a href="#F1_51">51</a>, <a href="#F1_76">76</a>, <a href="#F1_77">77</a>, <a href="#F1_78">78</a>, <a href="#F1_80">80</a>, <a href="#F1_81">81</a>, <a href="#F1_82">82</a>, <a href="#F1_83">83</a>, <a href="#F1_84">84</a>, <a href="#F1_85">85</a>, <a href="#F1_86">86</a>, <a href="#F1_87">87</a>, <a href="#F1_88">88</a>, <a href="#F1_91">91</a>, <a href="#F1_92">92</a>, <a href="#F1_95">95</a>, <a href="#F1_102">102</a>, <a href="#F1_103">103</a>, <a href="#F1_104">104</a>, <a href="#F1_106">106</a>, <a href="#F1_107">107</a>, <a href="#F1_111">111</a>, <a href="#F1_112">112</a>, <a href="#F1_115">115</a>, <a href="#F1_116">116</a>, <a href="#F1_117">117</a>, <a href="#F1_118">118</a>, <a href="#F1_119">119</a>, <a href="#F1_120">120</a>, <a href="#F1_121">121</a>, <a href="#F1_122">122</a>, <a href="#F1_123">123</a></td>
+    </tr>
+    <tr>
+        <td class="added">Added line:&nbsp;</td>
+        <td class="added"><a href="#F2_7">7</a>, <a href="#F2_13">13</a>, <a href="#F2_15">15</a>, <a href="#F2_43">43</a>, <a href="#F2_44">44</a>, <a href="#F2_45">45</a>, <a href="#F2_46">46</a>, <a href="#F2_47">47</a>, <a href="#F2_48">48</a>, <a href="#F2_49">49</a>, <a href="#F2_50">50</a>, <a href="#F2_51">51</a>, <a href="#F2_52">52</a>, <a href="#F2_53">53</a>, <a href="#F2_54">54</a>, <a href="#F2_55">55</a>, <a href="#F2_56">56</a>, <a href="#F2_57">57</a>, <a href="#F2_58">58</a>, <a href="#F2_59">59</a>, <a href="#F2_60">60</a>, <a href="#F2_61">61</a>, <a href="#F2_62">62</a>, <a href="#F2_63">63</a>, <a href="#F2_64">64</a>, <a href="#F2_65">65</a>, <a href="#F2_66">66</a>, <a href="#F2_69">69</a>, <a href="#F2_73">73</a>, <a href="#F2_74">74</a>, <a href="#F2_75">75</a>, <a href="#F2_76">76</a>, <a href="#F2_77">77</a>, <a href="#F2_78">78</a>, <a href="#F2_79">79</a>, <a href="#F2_80">80</a>, <a href="#F2_81">81</a>, <a href="#F2_82">82</a>, <a href="#F2_83">83</a>, <a href="#F2_84">84</a>, <a href="#F2_85">85</a>, <a href="#F2_86">86</a>, <a href="#F2_87">87</a>, <a href="#F2_88">88</a>, <a href="#F2_90">90</a>, <a href="#F2_117">117</a>, <a href="#F2_118">118</a>, <a href="#F2_119">119</a>, <a href="#F2_130">130</a>, <a href="#F2_131">131</a>, <a href="#F2_132">132</a>, <a href="#F2_133">133</a>, <a href="#F2_142">142</a>, <a href="#F2_143">143</a>, <a href="#F2_144">144</a>, <a href="#F2_145">145</a>, <a href="#F2_146">146</a>, <a href="#F2_147">147</a>, <a href="#F2_148">148</a>, <a href="#F2_149">149</a>, <a href="#F2_150">150</a>, <a href="#F2_151">151</a>, <a href="#F2_152">152</a>, <a href="#F2_153">153</a>, <a href="#F2_154">154</a>, <a href="#F2_155">155</a>, <a href="#F2_156">156</a>, <a href="#F2_157">157</a>, <a href="#F2_158">158</a>, <a href="#F2_159">159</a>, <a href="#F2_160">160</a>, <a href="#F2_161">161</a>, <a href="#F2_162">162</a>, <a href="#F2_163">163</a>, <a href="#F2_164">164</a>, <a href="#F2_165">165</a>, <a href="#F2_166">166</a>, <a href="#F2_167">167</a>, <a href="#F2_168">168</a>, <a href="#F2_169">169</a>, <a href="#F2_170">170</a>, <a href="#F2_171">171</a>, <a href="#F2_172">172</a>, <a href="#F2_175">175</a>, <a href="#F2_176">176</a>, <a href="#F2_177">177</a>, <a href="#F2_178">178</a>, <a href="#F2_179">179</a>, <a href="#F2_180">180</a>, <a href="#F2_181">181</a>, <a href="#F2_182">182</a>, <a href="#F2_183">183</a>, <a href="#F2_184">184</a>, <a href="#F2_185">185</a>, <a href="#F2_186">186</a>, <a href="#F2_187">187</a>, <a href="#F2_188">188</a>, <a href="#F2_189">189</a>, <a href="#F2_190">190</a>, <a href="#F2_191">191</a>, <a href="#F2_192">192</a>, <a href="#F2_197">197</a>, <a href="#F2_198">198</a>, <a href="#F2_199">199</a>, <a href="#F2_206">206</a>, <a href="#F2_207">207</a>, <a href="#F2_208">208</a>, <a href="#F2_209">209</a>, <a href="#F2_221">221</a>, <a href="#F2_222">222</a>, <a href="#F2_223">223</a>, <a href="#F2_224">224</a>, <a href="#F2_225">225</a>, <a href="#F2_226">226</a>, <a href="#F2_227">227</a>, <a href="#F2_228">228</a>, <a href="#F2_229">229</a>, <a href="#F2_230">230</a>, <a href="#F2_231">231</a>, <a href="#F2_232">232</a>, <a href="#F2_233">233</a>, <a href="#F2_234">234</a>, <a href="#F2_235">235</a>, <a href="#F2_236">236</a>, <a href="#F2_237">237</a>, <a href="#F2_238">238</a>, <a href="#F2_239">239</a>, <a href="#F2_240">240</a>, <a href="#F2_241">241</a>, <a href="#F2_242">242</a>, <a href="#F2_243">243</a>, <a href="#F2_244">244</a>, <a href="#F2_245">245</a>, <a href="#F2_246">246</a>, <a href="#F2_247">247</a>, <a href="#F2_248">248</a>, <a href="#F2_249">249</a>, <a href="#F2_250">250</a>, <a href="#F2_251">251</a>, <a href="#F2_252">252</a>, <a href="#F2_253">253</a>, <a href="#F2_254">254</a>, <a href="#F2_255">255</a>, <a href="#F2_256">256</a>, <a href="#F2_257">257</a>, <a href="#F2_258">258</a>, <a href="#F2_259">259</a>, <a href="#F2_260">260</a>, <a href="#F2_261">261</a>, <a href="#F2_262">262</a>, <a href="#F2_263">263</a>, <a href="#F2_264">264</a>, <a href="#F2_265">265</a>, <a href="#F2_266">266</a>, <a href="#F2_267">267</a>, <a href="#F2_268">268</a>, <a href="#F2_269">269</a>, <a href="#F2_270">270</a>, <a href="#F2_271">271</a>, <a href="#F2_272">272</a>, <a href="#F2_273">273</a>, <a href="#F2_274">274</a>, <a href="#F2_275">275</a>, <a href="#F2_276">276</a>, <a href="#F2_277">277</a>, <a href="#F2_278">278</a>, <a href="#F2_279">279</a>, <a href="#F2_280">280</a>, <a href="#F2_281">281</a>, <a href="#F2_282">282</a>, <a href="#F2_283">283</a>, <a href="#F2_284">284</a>, <a href="#F2_285">285</a>, <a href="#F2_286">286</a>, <a href="#F2_287">287</a>, <a href="#F2_288">288</a>, <a href="#F2_289">289</a>, <a href="#F2_290">290</a>, <a href="#F2_291">291</a>, <a href="#F2_292">292</a>, <a href="#F2_293">293</a>, <a href="#F2_294">294</a>, <a href="#F2_295">295</a>, <a href="#F2_296">296</a>, <a href="#F2_297">297</a>, <a href="#F2_298">298</a>, <a href="#F2_299">299</a>, <a href="#F2_300">300</a>, <a href="#F2_301">301</a></td>
+    </tr>
+    <tr>
+        <td class="removed">Removed line:&nbsp;</td>
+        <td class="removed"><a href="#F1_17">17</a>, <a href="#F1_18">18</a>, <a href="#F1_19">19</a>, <a href="#F1_20">20</a>, <a href="#F1_21">21</a>, <a href="#F1_22">22</a>, <a href="#F1_23">23</a>, <a href="#F1_93">93</a>, <a href="#F1_97">97</a>, <a href="#F1_108">108</a>, <a href="#F1_109">109</a></td>
+    </tr>
+</table>
+</td>
+<td width="50%">
+<i>Generated by <a href="http://diff2html.tuxfamily.org"><b>diff2html</b></a><br/>
+&copy; Yves Bailly, MandrakeSoft S.A. 2001<br/>
+<b>diff2html</b> is licensed under the <a 
+href="http://www.gnu.org/copyleft/gpl.html">GNU GPL</a>.</i>
+</td></tr>
+</table>
+<hr/>
+<table>
+    <tr>
+        <th>&nbsp;</th>
+        <th width="45%"><strong><big>DiffViewer/output/AnalysisResults.java//AnalysisResults.java_004</big></strong></th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="45%"><strong><big>DiffViewer/output/AnalysisResults.java//AnalysisResults.java_005</big></strong></th>
+    </tr>
+    <tr>
+        <td width="16">&nbsp;</td>
+        <td>
+        127 lines<br/>
+        5356 bytes<br/>
+        Last modified : Mon May 14 20:27:08 2012<br/>
+        <hr/>
+        </td>
+        <td width="16">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td>
+        305 lines<br/>
+        11787 bytes<br/>
+        Last modified : Mon May 14 20:27:48 2012<br/>
+        <hr/>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_1">1</a></td>
+        <td class="modified">//Time : 2012-04-12 06:35:10.781</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">1</td>
+        <td class="modified">//Time : 2012-04-24 18:21:38.377</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_2">2</a></td>
+        <td class="modified">//Files Open : /mcmutton/src/main/java/edu/ucsd/salud/mcmutton/BugHunt.java /pvekris/src/main/java/energy/interproc/CtxSensLocking.java /pvekris/src/main/java/energy/analysis/WakeLockManager.java /pvekris/src/main/java/energy/analysis/Opts.java /pvekris/src/main/java/energy/analysis/SpecialConditions.java /pvekris/src/main/java/energy/analysis/AnalysisResults.java /pvekris/src/main/java/energy/analysis/ComponentManager.java</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">2</td>
+        <td class="modified">//Files Open : /pvekris/src/main/java/energy/analysis/AnalysisResults.java /mcmutton/src/main/java/edu/ucsd/salud/mcmutton/BugHunt.java</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">3</td>
+        <td class="normal">package energy.analysis;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">3</td>
+        <td class="normal">package energy.analysis;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_4">4</a></td>
+        <td class="modified">import java.util.EnumMap;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">4</td>
+        <td class="modified">import java.util.ArrayList;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">5</td>
+        <td class="normal">import java.util.HashMap;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">5</td>
+        <td class="normal">import java.util.HashMap;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">6</td>
+        <td class="normal">import java.util.HashSet;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">6</td>
+        <td class="normal">import java.util.HashSet;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_7">7</a></td>
+        <td class="added">import java.util.Iterator;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">7</td>
+        <td class="normal">import java.util.Map;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">8</td>
+        <td class="normal">import java.util.Map;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">8</td>
+        <td class="normal">import java.util.Map.Entry;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">9</td>
+        <td class="normal">import java.util.Map.Entry;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">9</td>
+        <td class="normal">import java.util.Set;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">10</td>
+        <td class="normal">import java.util.Set;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_10">10</a></td>
+        <td class="modified">import com.ibm.wala.types.FieldReference;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">11</td>
+        <td class="modified">import com.ibm.wala.ipa.callgraph.CGNode;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">11</td>
+        <td class="normal">import com.ibm.wala.util.collections.Pair;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">12</td>
+        <td class="normal">import com.ibm.wala.util.collections.Pair;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_13">13</a></td>
+        <td class="added">import energy.analysis.WakeLockManager.WakeLockInstance;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">12</td>
+        <td class="normal">import energy.components.Component;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">14</td>
+        <td class="normal">import energy.components.Component;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_15">15</a></td>
+        <td class="added">import energy.components.Component.CallBack;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">13</td>
+        <td class="normal">import energy.interproc.CompoundLockState;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">16</td>
+        <td class="normal">import energy.interproc.CompoundLockState;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">14</td>
+        <td class="normal">import energy.interproc.SingleLockState;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">17</td>
+        <td class="normal">import energy.interproc.SingleLockState;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">15</td>
+        <td class="normal">import energy.util.E;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">18</td>
+        <td class="normal">import energy.util.E;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">16</td>
+        <td class="normal">public class AnalysisResults {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">19</td>
+        <td class="normal">public class AnalysisResults {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_17">17</a></td>
+        <td class="removed">&nbsp;&nbsp;private HashSet&lt;Pair&lt;Component,Map&lt;String,Map&lt;FieldReference,Set&lt;SingleLockState&gt;&gt;&gt;&gt;&gt; resultStuff=null;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_18">18</a></td>
+        <td class="removed">public class ComponentResult {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_19">19</a></td>
+        <td class="removed">&nbsp;&nbsp;&nbsp;&nbsp;HashMap&lt;String,CompoundLockState&gt; callBackExitStates;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_20">20</a></td>
+        <td class="removed">&nbsp;&nbsp;&nbsp;&nbsp;public ComponentResult(){</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_21">21</a></td>
+        <td class="removed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callBackExitStates=new HashMap&lt;String,CompoundLockState&gt;();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_22">22</a></td>
+        <td class="removed">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_23">23</a></td>
+        <td class="removed">&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">24</td>
+        <td class="normal">&nbsp;&nbsp;/**</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">20</td>
+        <td class="normal">&nbsp;&nbsp;/**</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_25">25</a></td>
+        <td class="modified">&nbsp;* The constructor</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">21</td>
+        <td class="modified">&nbsp;* Main structures that hold the analysis results for every component</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">26</td>
+        <td class="normal">&nbsp;*/</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">22</td>
+        <td class="normal">&nbsp;*/</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_27">27</a></td>
+        <td class="modified">&nbsp;&nbsp;AnalysisResults(){</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">23</td>
+        <td class="modified">&nbsp;&nbsp;private HashSet&lt;Pair&lt;Component,ComponentSummary&gt;&gt; allStates=null;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_28">28</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;resultStuff=new HashSet&lt;Pair&lt;Component,Map&lt;String,Map&lt;FieldReference,Set&lt;SingleLockState&gt;&gt;&gt;&gt;&gt;();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">24</td>
+        <td class="modified">public class ComponentSummary {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_29">29</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;callBackResultMap=new HashMap&lt;Pair&lt;String,String&gt;,EnumMap&lt;LockUsage,Integer&gt;&gt;();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">25</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;private Component component;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_30">30</a></td>
+        <td class="modified">&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">26</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;private HashMap&lt;CallBack,CompoundLockState&gt; callBackExitStates;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_31">31</a></td>
+        <td class="modified">&nbsp;&nbsp;int threadCount=0;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">27</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;private HashMap&lt;CGNode,CompoundLockState&gt; allExitStates;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_32">32</a></td>
+        <td class="modified">&nbsp;&nbsp;int activityCount=0;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">28</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public ComponentSummary(    Component c){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_33">33</a></td>
+        <td class="modified">&nbsp;&nbsp;int lockThreads=0;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">29</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.component=c;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_34">34</a></td>
+        <td class="modified">&nbsp;&nbsp;int nolockThreads=0;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">30</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allExitStates=new HashMap&lt;CGNode,CompoundLockState&gt;();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_35">35</a></td>
+        <td class="modified">&nbsp;&nbsp;int unlockThreads=0;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">31</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callBackExitStates=new HashMap&lt;Component.CallBack,CompoundLockState&gt;();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_36">36</a></td>
+        <td class="modified">&nbsp;&nbsp;int lockunlockThreads=0;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">32</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_37">37</a></td>
+        <td class="modified">&nbsp;&nbsp;public enum LockUsage {  LOCKING,   UNLOCKING,   NOLOCKING,   LOCKUNLOCK,   EMPTY,   UNKNOWN_STATE,   FULL_UNLOCKING}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">33</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public HashMap&lt;CGNode,CompoundLockState&gt; getAllExitStates(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_38">38</a></td>
+        <td class="modified">&nbsp;&nbsp;private Map&lt;Pair&lt;String,String&gt;,EnumMap&lt;LockUsage,Integer&gt;&gt; callBackResultMap;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">34</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return allExitStates;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_39">39</a></td>
+        <td class="modified">&nbsp;&nbsp;public void registerExitLockState(  Component component,  Map&lt;String,Map&lt;FieldReference,Set&lt;SingleLockState&gt;&gt;&gt; map){</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">35</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_40">40</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;resultStuff.add(Pair.make(component,map));</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">36</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public void registerNodeState(    CGNode n,    CompoundLockState st){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_41">41</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer sb=new StringBuffer();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">37</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allExitStates.put(n,st);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_42">42</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;for (    Entry&lt;String,Map&lt;FieldReference,Set&lt;SingleLockState&gt;&gt;&gt; e : map.entrySet()) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">38</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_43">43</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (e.getValue().size() &gt; 0) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">39</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public void registerCallBackState(    CallBack cb,    CompoundLockState st){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_44">44</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append(e.getKey() + "\n");</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">40</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callBackExitStates.put(cb,st);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_45">45</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (        Entry&lt;FieldReference,Set&lt;SingleLockState&gt;&gt; entry : e.getValue().entrySet()) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">41</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_46">46</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append(entry.getKey() + " -&gt; " + entry.getValue().toString());</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">42</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public CompoundLockState getStateForMethod(    String method){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_43">43</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return allExitStates.get(method);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_44">44</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_45">45</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;public String toString(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_46">46</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer sb=new StringBuffer();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_47">47</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (Iterator&lt;CGNode&gt; it=component.getCallgraph().iterator(); it.hasNext(); ) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_48">48</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CGNode next=it.next();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_49">49</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String name=next.getMethod().getName().toString();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_50">50</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CompoundLockState stateForMethod=getStateForMethod(name);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_51">51</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (stateForMethod != null) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_52">52</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append(name + ":\n" + stateForMethod.toString());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_53">53</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_54">54</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_55">55</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HashSet&lt;CallBack&gt; callbacks=component.getCallbacks();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_56">56</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (callbacks != null) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_57">57</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (callbacks.size() &gt; 0) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_58">58</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append("Callbacks:\n");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_59">59</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (          CallBack cb : callbacks) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_60">60</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String name=cb.getName();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_61">61</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_62">62</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CompoundLockState stateForMethod=getStateForMethod(name);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_63">63</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (stateForMethod != null) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_64">64</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append("   " + name + ":\n"+ stateForMethod.toString());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_65">65</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_66">66</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">47</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">67</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">48</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">68</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_69">69</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return null;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">49</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">70</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_50">50</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;if (sb.length() &gt; 0) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">71</td>
+        <td class="modified">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_51">51</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E.log(1,component.toString() + "\n" + sb.toString());</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">72</td>
+        <td class="modified">&nbsp;&nbsp;public AnalysisResults(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_73">73</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;allStates=new HashSet&lt;Pair&lt;Component,ComponentSummary&gt;&gt;();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_74">74</a></td>
+        <td class="added">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_75">75</a></td>
+        <td class="added">&nbsp;&nbsp;public enum LockUsage {  LOCKING,   UNLOCKING,   NOLOCKING,   LOCKUNLOCK,   EMPTY,   UNKNOWN_STATE,   FULL_UNLOCKING}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_76">76</a></td>
+        <td class="added">&nbsp;&nbsp;/**</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_77">77</a></td>
+        <td class="added">&nbsp;* Invoke this after the component has been analyzed</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_78">78</a></td>
+        <td class="added">&nbsp;* @param component</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_79">79</a></td>
+        <td class="added">&nbsp;*/</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_80">80</a></td>
+        <td class="added">&nbsp;&nbsp;public void createComponentSummary(  Component component){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_81">81</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;ComponentSummary componentSummary=new ComponentSummary(component);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_82">82</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;for (Iterator&lt;CGNode&gt; it=component.getCallgraph().iterator(); it.hasNext(); ) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_83">83</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CGNode next=it.next();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_84">84</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Map&lt;WakeLockInstance,Set&lt;SingleLockState&gt;&gt; exitState=component.getExitState(next);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_85">85</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (exitState != null) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_86">86</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CompoundLockState compoundLockState=new CompoundLockState(exitState);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_87">87</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;componentSummary.registerNodeState(next,compoundLockState);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_88">88</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">52</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">89</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_90">90</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;allStates.add(Pair.make(component,componentSummary));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">53</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">91</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">54</td>
+        <td class="normal">&nbsp;&nbsp;private LockUsage getLockUsage(  SingleLockState runState){</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">92</td>
+        <td class="normal">&nbsp;&nbsp;private LockUsage getLockUsage(  SingleLockState runState){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">55</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;if (runState != null) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">93</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;if (runState != null) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">56</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (runState.isMaybeAcquired() &amp;&amp; (!runState.isMaybeReleased())) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">94</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (runState.isMaybeAcquired() &amp;&amp; (!runState.isMaybeReleased())) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">57</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.LOCKING;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">95</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.LOCKING;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">58</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">96</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">59</td>
+        <td class="normal">&nbsp;else       if (!runState.isMaybeReleased() &amp;&amp; (!runState.isMaybeAcquired())) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">97</td>
+        <td class="normal">&nbsp;else       if (!runState.isMaybeReleased() &amp;&amp; (!runState.isMaybeAcquired())) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">60</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.EMPTY;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">98</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.EMPTY;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">61</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">99</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">62</td>
+        <td class="normal">&nbsp;else       if (runState.isMaybeReleased() &amp;&amp; (!runState.isMaybeAcquired())) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">100</td>
+        <td class="normal">&nbsp;else       if (runState.isMaybeReleased() &amp;&amp; (!runState.isMaybeAcquired())) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">63</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.FULL_UNLOCKING;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">101</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.FULL_UNLOCKING;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">64</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">102</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">65</td>
+        <td class="normal">&nbsp;else       if (runState.isMaybeReleased()) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">103</td>
+        <td class="normal">&nbsp;else       if (runState.isMaybeReleased()) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">66</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.UNLOCKING;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">104</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.UNLOCKING;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">67</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">105</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">68</td>
+        <td class="normal">&nbsp;else {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">106</td>
+        <td class="normal">&nbsp;else {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">69</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.UNKNOWN_STATE;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">107</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.UNKNOWN_STATE;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">70</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">108</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">71</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">109</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">72</td>
+        <td class="normal">&nbsp;else {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">110</td>
+        <td class="normal">&nbsp;else {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">73</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.EMPTY;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">111</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return LockUsage.EMPTY;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">74</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">112</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">75</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">113</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_76">76</a></td>
+        <td class="modified">&nbsp;&nbsp;public void processResults(){</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">114</td>
+        <td class="modified">&nbsp;&nbsp;public ArrayList&lt;String&gt; processResults(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_77">77</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("\n");</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">115</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;ArrayList&lt;String&gt; result=null;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_78">78</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;for (    Pair&lt;Component,Map&lt;String,Map&lt;FieldReference,Set&lt;SingleLockState&gt;&gt;&gt;&gt; pair : resultStuff) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">116</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("\n==========================================");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_117">117</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;HashMap&lt;LockUsage,Set&lt;Pair&lt;Component,CGNode&gt;&gt;&gt; usageMap=new HashMap&lt;LockUsage,Set&lt;Pair&lt;Component,CGNode&gt;&gt;&gt;();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_118">118</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;HashMap&lt;Component,Logger&gt; componentMap=new HashMap&lt;Component,Logger&gt;();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_119">119</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;for (    Pair&lt;Component,ComponentSummary&gt; pair : allStates) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">79</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Component component=pair.fst;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">120</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Component component=pair.fst;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_80">80</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String componentName=component.getComponentName();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">121</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ComponentSummary cSummary=pair.snd;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_81">81</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Map&lt;String,Map&lt;FieldReference,Set&lt;SingleLockState&gt;&gt;&gt; callBackMap=pair.snd;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">122</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ComponentPolicy policy=new ComponentPolicy(component);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_82">82</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (      Entry&lt;String,Map&lt;FieldReference,Set&lt;SingleLockState&gt;&gt;&gt; e : callBackMap.entrySet()) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">123</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer sb=new StringBuffer();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_83">83</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String callBackName=e.getKey();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">124</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean printComponent=false;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_84">84</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pair&lt;String,String&gt; compAndCB=Pair.make(component.toString(),callBackName);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">125</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (      Entry&lt;CGNode,CompoundLockState&gt; e : cSummary.getAllExitStates().entrySet()) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_85">85</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pair&lt;String,String&gt; abstCompAndCB=Pair.make(componentName,callBackName);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">126</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CGNode node=e.getKey();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_86">86</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HashMap&lt;FieldReference,LockUsage&gt; lockUsages=new HashMap&lt;FieldReference,LockUsage&gt;();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">127</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HashMap&lt;WakeLockInstance,LockUsage&gt; lockUsages=new HashMap&lt;WakeLockInstance,LockUsage&gt;();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_87">87</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (        Entry&lt;FieldReference,Set&lt;SingleLockState&gt;&gt; fs : e.getValue().entrySet()) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">128</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean printMethod=false;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_88">88</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FieldReference field=fs.getKey();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">129</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LockUsage lockUsage=LockUsage.EMPTY;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_130">130</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CompoundLockState compLS=e.getValue();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_131">131</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Map&lt;WakeLockInstance,Set&lt;SingleLockState&gt;&gt; allLockStates=compLS.getAllLockStates();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_132">132</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (        Entry&lt;WakeLockInstance,Set&lt;SingleLockState&gt;&gt; fs : allLockStates.entrySet()) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_133">133</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WakeLockInstance wli=fs.getKey();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">89</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&lt;SingleLockState&gt; sls=fs.getValue();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">134</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&lt;SingleLockState&gt; sls=fs.getValue();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">90</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState sl=SingleLockState.mergeSingleLockStates(sls);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">135</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState sl=SingleLockState.mergeSingleLockStates(sls);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_91">91</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LockUsage lockUsage=getLockUsage(sl);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">136</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lockUsage=getLockUsage(sl);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_92">92</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lockUsages.put(field,lockUsage);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">137</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lockUsages.put(wli,lockUsage);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_93">93</a></td>
+        <td class="removed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EnumMap&lt;LockUsage,Integer&gt; enumMap=callBackResultMap.get(abstCompAndCB);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">94</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (lockUsage != LockUsage.EMPTY) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">138</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (lockUsage != LockUsage.EMPTY) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_95">95</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E.log(1,compAndCB.toString() + " :: " + lockUsage.toString());</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">139</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printMethod=true;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">96</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">140</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_97">97</a></td>
+        <td class="removed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateEnumMap(enumMap,lockUsage);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">98</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">141</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_142">142</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (printMethod) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_143">143</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (Opts.OUTPUT_ALL_NODE_INFO || component.isCallBack(node)) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_144">144</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printComponent=true;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_145">145</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HashSet&lt;SingleLockState&gt; tempState=new HashSet&lt;SingleLockState&gt;();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_146">146</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append("    " + node.getMethod().getSignature().toString() + "\n");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_147">147</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (            Entry&lt;WakeLockInstance,Set&lt;SingleLockState&gt;&gt; fs : compLS.getAllLockStates().entrySet()) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_148">148</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WakeLockInstance key=fs.getKey();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_149">149</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&lt;SingleLockState&gt; value=fs.getValue();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_150">150</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempState.add(SingleLockState.mergeSingleLockStates(value));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_151">151</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append("\t" + key.toString() + "\n\t"+ value.toString()+ "\n");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_152">152</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_153">153</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState mergedLS=SingleLockState.mergeSingleLockStates(tempState);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_154">154</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LockUsage lu=getLockUsage(mergedLS);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_155">155</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (component.isCallBack(node)) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_156">156</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (usageMap.containsKey(lu)) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_157">157</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usageMap.get(lu).add(Pair.make(component,node));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_158">158</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_159">159</a></td>
+        <td class="added">&nbsp;else {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_160">160</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HashSet&lt;Pair&lt;Component,CGNode&gt;&gt; set=new HashSet&lt;Pair&lt;Component,CGNode&gt;&gt;();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_161">161</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set.add(Pair.make(component,node));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_162">162</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usageMap.put(lu,set);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_163">163</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_164">164</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;policy.addFact(node,mergedLS);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_165">165</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_166">166</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_167">167</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_168">168</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_169">169</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (printComponent) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_170">170</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(component.toString() + "\n" + sb.toString());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_171">171</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;policy.solveFacts();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_172">172</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;componentMap.put(component,policy.getLogger());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">99</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">173</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">100</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">174</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_175">175</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("==========================================\n");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_176">176</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;for (    LockUsage e : usageMap.keySet()) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_177">177</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(e.toString());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_178">178</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (      Pair&lt;Component,CGNode&gt; s : usageMap.get(e)) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_179">179</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("   " + s.toString());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_180">180</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_181">181</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_182">182</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("==========================================\n");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_183">183</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;for (    Component e : componentMap.keySet()) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_184">184</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logger logger=componentMap.get(e);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_185">185</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!logger.isEmpty()) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_186">186</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(e.toString());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_187">187</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(logger.toString());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_188">188</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("\n");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_189">189</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_190">190</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result=logger.getStringList();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_191">191</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_192">192</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;return result;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">101</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">193</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_102">102</a></td>
+        <td class="modified">&nbsp;&nbsp;private void updateEnumMap(  EnumMap&lt;LockUsage,Integer&gt; enumMap,  LockUsage lockUsage){</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">194</td>
+        <td class="modified">public class Logger extends ArrayList&lt;String&gt; {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_103">103</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;if (enumMap == null) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">195</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;private static final long serialVersionUID=4402714524487791090L;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_104">104</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enumMap=new EnumMap&lt;LockUsage,Integer&gt;(LockUsage.class);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">196</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public void output(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_197">197</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (      String s : this) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_198">198</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("    " + s);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_199">199</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">105</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">200</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_106">106</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;Integer count=enumMap.get(lockUsage);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">201</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public ArrayList&lt;String&gt; getStringList(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_107">107</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;if (count == null) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">202</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return this;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_108">108</a></td>
+        <td class="removed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count=new Integer(1);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_109">109</a></td>
+        <td class="removed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enumMap.put(lockUsage,count);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">&nbsp;</td>
+        <td class="removed">&nbsp;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">110</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">203</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_111">111</a></td>
+        <td class="modified">&nbsp;else {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">204</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public String toString(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_112">112</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enumMap.put(lockUsage,count + 1);</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">205</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer result=new StringBuffer();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_206">206</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (      String s : this) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_207">207</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.append(s + "\n");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_208">208</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_209">209</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return result.toString();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">113</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">210</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">114</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">211</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_115">115</a></td>
+        <td class="modified">&nbsp;&nbsp;public void outputFinalResults(){</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">212</td>
+        <td class="modified">public class ComponentPolicy {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_116">116</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;for (    Entry&lt;Pair&lt;String,String&gt;,EnumMap&lt;LockUsage,Integer&gt;&gt; e : callBackResultMap.entrySet()) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">213</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;private Component component;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_117">117</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pair&lt;String,String&gt; key=e.getKey();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">214</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public ComponentPolicy(    Component component){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_118">118</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E.log(1,key.toString());</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">215</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.component=component;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_119">119</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EnumMap&lt;LockUsage,Integer&gt; usages=e.getValue();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">216</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map=new HashMap&lt;String,SingleLockState&gt;();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_120">120</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (      Entry&lt;LockUsage,Integer&gt; u : usages.entrySet()) {</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">217</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logger=new Logger();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_121">121</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LockUsage usage=u.getKey();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">218</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_122">122</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integer count=u.getValue();</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">219</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;private HashMap&lt;String,SingleLockState&gt; map;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum"><a name="F1_123">123</a></td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E.log(1,"--&gt; " + usage.toString() + " :: "+ count.toString());</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">220</td>
+        <td class="modified">&nbsp;&nbsp;&nbsp;&nbsp;public void addFact(    CGNode n,    SingleLockState st){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_221">221</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map.put(n.getMethod().getName().toString(),st);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_222">222</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_223">223</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;private boolean unlocking(    SingleLockState state){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_224">224</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (strongUnlocking(state) || weakUnlocking(state));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_225">225</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_226">226</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;private boolean strongUnlocking(    SingleLockState state){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_227">227</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (state != null) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_228">228</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (getLockUsage(state).equals(LockUsage.FULL_UNLOCKING));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_229">229</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_230">230</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_231">231</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_232">232</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;private boolean weakUnlocking(    SingleLockState state){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_233">233</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (state != null) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_234">234</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (getLockUsage(state).equals(LockUsage.UNLOCKING));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_235">235</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_236">236</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_237">237</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_238">238</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;private boolean locking(    SingleLockState onCreateState){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_239">239</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (onCreateState != null) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_240">240</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (getLockUsage(onCreateState).equals(LockUsage.LOCKING));</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_241">241</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_242">242</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_243">243</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_244">244</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;private Logger logger;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_245">245</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;private void logNote(    String s){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_246">246</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logger.add(s);</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_247">247</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_248">248</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;public Logger getLogger(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_249">249</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return logger;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_250">250</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_251">251</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;private SingleLockState getServiceOnStart(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_252">252</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState onStart=map.get("onStart");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_253">253</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState onStartCommand=map.get("onStartCommand");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_254">254</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (onStartCommand == null) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_255">255</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return onStart;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_256">256</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_257">257</a></td>
+        <td class="added">&nbsp;else {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_258">258</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return onStartCommand;</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_259">259</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_260">260</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_261">261</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_262">262</a></td>
+        <td class="added">&nbsp;* TODO: make sure the same lock is locked and unlocked...</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_263">263</a></td>
+        <td class="added">&nbsp;*/</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_264">264</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;public void solveFacts(){</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_265">265</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E.log(1,"Looking for: " + component.getComponentType());</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_266">266</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (component.getComponentType().equals("Activity")) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_267">267</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState onCreateState=map.get("onCreate");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_268">268</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (locking(onCreateState)) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_269">269</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logNote("STRONG BUG: Locking @ onCreate");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_270">270</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_271">271</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState onStartState=map.get("onStart");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_272">272</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (locking(onStartState)) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_273">273</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logNote("POSSIBLE BUG: Locking @ onStart");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_274">274</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_275">275</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState onPauseState=map.get("onPause");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_276">276</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState onResumeState=map.get("onResume");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_277">277</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (locking(onResumeState) &amp;&amp; (!unlocking(onPauseState))) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_278">278</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logNote("POSSIBLE BUG(onPause - onResume)");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_279">279</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_280">280</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_281">281</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (component.getComponentType().equals("Service")) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_282">282</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState onStartState=getServiceOnStart();</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_283">283</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState onDestroyState=map.get("onDestroy");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_284">284</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (locking(onStartState) &amp;&amp; (!unlocking(onDestroyState))) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_285">285</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logNote("STRONG BUG: " + component.toString() + "Locking @ onDestroy");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_286">286</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_287">287</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (weakUnlocking(onDestroyState)) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_288">288</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logNote("WEAK BUG: " + component.toString() + "Weak UnLocking @ onDestroy");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_289">289</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_290">290</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_291">291</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (component.getComponentType().equals("RunnableThread")) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_292">292</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState runState=map.get("run");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_293">293</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (locking(runState)) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_294">294</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logNote("WEAK BUG: " + component.toString() + "Locking @ run");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_295">295</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_296">296</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_297">297</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (component.getComponentType().equals("BroadcastReceiver")) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_298">298</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SingleLockState onReceiveState=map.get("onReceive");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_299">299</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (locking(onReceiveState)) {</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_300">300</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logNote("WEAK BUG: " + component.toString() + "Locking @ onReceive");</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">&nbsp;</td>
+        <td class="added">&nbsp;</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum"><a name="F2_301">301</a></td>
+        <td class="added">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">124</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">302</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">125</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">303</td>
+        <td class="normal">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">126</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">304</td>
+        <td class="normal">&nbsp;&nbsp;}</td>
+    </tr>
+
+
+    <tr>
+        <td class="linenum">127</td>
+        <td class="normal">}</td>
+        <td width="16">&nbsp;</td>
+        <td class="linenum">305</td>
+        <td class="normal">}</td>
+    </tr>
+
+
+</table>
+<hr/>
+<i>Generated by <b>diff2html</b> on Mon May 14 20:59:11 2012<br/>
+Command-line:</i> <tt>/usr/bin/diff2html DiffViewer/output/AnalysisResults.java//AnalysisResults.java_004 DiffViewer/output/AnalysisResults.java//AnalysisResults.java_005</tt>
+
+</body>
+</html>
+

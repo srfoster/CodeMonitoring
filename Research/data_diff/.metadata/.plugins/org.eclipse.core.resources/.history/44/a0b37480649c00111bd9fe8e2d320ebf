@@ -1,0 +1,232 @@
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+import models.AttributeRecord;
+import models.DbRecord;
+import models.DeltaContentRecord;
+import models.DeltaRecord;
+import models.FileRecord;
+import difflib.DiffUtils;
+import difflib.Patch;
+import difflib.PatchFailedException;
+
+public class DiffViewer {
+	
+	List<DbRecord> deltas;
+	Iterator deltas_iterator;
+	
+	HashMap<Long,Info> info;
+	
+	boolean paused = true;
+	
+	int count = 0;
+	
+	public static void main(String[] args)
+	{
+		(new DiffViewer()).init();
+	}
+	
+	public void init() {
+		info = new HashMap<Long,Info>();
+		
+		deltas = (new DeltaContentRecord()).all();
+		deltas_iterator = deltas.iterator();
+		
+		while(deltas_iterator.hasNext())
+		{
+			nextDelta();
+		}
+	}
+	
+	
+	public void nextDelta()
+	{
+		count++;
+		System.out.println(count + " of " + deltas.size());
+		DeltaContentRecord content = (DeltaContentRecord) deltas_iterator.next();
+		DeltaRecord delta = content.getDelta();
+		AttributeRecord attribute = delta.getAttribute();
+		FileRecord file = attribute.getFile();
+		
+	//	System.out.println("Handling:");
+	//	System.out.println("  " + attribute.getName());
+	//	System.out.println("  " + content.getContents());
+
+		if(attribute.getName().equals("status")) { //File status changed
+			
+			if(content.getContents().toLowerCase().equals("Opened".toLowerCase())){        //File opened
+				
+				Info i = info.get(file.getId());
+				
+				if(i != null) { //We know about the opened file
+					
+				} else { //We don't know about the opened file (i.e. we don't know it's name yet).
+					
+					// We'll just ignore this and wait for the first name/content change.
+					System.out.println();
+				}
+				
+			}else if(content.getContents().toLowerCase().equals("Closed".toLowerCase())){  //File closed
+				
+				Info i = info.get(file.getId());
+				
+				
+				if(i != null)
+				{
+
+				} else { //Closing a file we don't know about.  We'll ignore this for now.
+					System.out.println();
+				}
+				
+				
+			}else if(content.getContents().toLowerCase().equals("Created".toLowerCase())){ //File created
+				
+				// We'll ignore this for now.  We can display this event somehow if we decide to care.
+				
+			}else if(content.getContents().toLowerCase().equals("Deleted".toLowerCase())){ //File deleted.  Treat like close.
+				Info i = info.get(file.getId());
+				
+				if(i != null)
+				{
+
+				} else { //Closing a file we don't know about.  We'll ignore this for now.
+					System.out.println();
+				}
+				
+			}else{
+				throw new RuntimeException("Unknown status change");
+			}
+			
+		} else if (attribute.getName().equals("name")) { //File name changed (or file was moved)
+			
+			// Execute a rename/move within sessions/ directory
+			
+			Info i = info.get(file.getId());
+			
+			if(i != null)
+			{
+				//We'll ignore the rename.
+				//If we decide to care, we should:
+				// 1) Display the event in some kind of popup.
+				// 2) Move the file inside of sessions.
+				// 3) Change the file_name attribute of the info object that file.getId() maps to.
+				System.out.println();
+			} else {
+
+
+				Info i_new = new Info();
+				i_new.file_name = content.getContents();
+				//System.out.println(content.getContents());
+				info.put(file.getId(), i_new);
+			}
+			
+		} else if (attribute.getName().equals("code")) { //File's contents changed
+			
+			//info.get(file.getId());
+			Info i = info.get(file.getId());
+			handleDelta(content, i);
+			
+		}
+		
+
+	}
+	
+	private void handleDelta(DeltaContentRecord delta_content, Info info)
+	{
+		String delta = delta_content.getContents();
+				
+		if(delta.equals(""))
+			return;
+		//System.out.println(delta);
+		
+		
+
+        
+        Patch patch = DiffUtils.parseUnifiedDiff(Arrays.asList(delta.split("\n")));
+        
+
+
+        
+        if(patch.getDeltas().size() == 0)
+        {
+            info.setContent(delta, delta_content);
+        	
+            return;
+        }
+        
+        List result = null;
+		try {
+			result = DiffUtils.patch(Arrays.asList(info.getContent().split("\n")), patch);
+		} catch (PatchFailedException e) {
+			e.printStackTrace();
+		} catch (IndexOutOfBoundsException e){
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+		if(result == null) return;
+		
+        String new_text = "";
+        
+        for(Object o : result)
+        {
+        	new_text += ((String) o) + "\n";
+        }
+
+        info.setContent(new_text, delta_content);
+	}
+
+	
+	private class Info
+	{		
+		public String file_name;
+		public String status;
+		private String content;
+		private int count = 0;
+		
+		
+		public Info()
+		{
+			content = "";
+		}
+		
+		public void setContent(String content, DeltaContentRecord delta_content)
+		{
+			this.content = content;
+			
+			String preamble = "//Time : " + delta_content.getDelta().getCreatedat().toString() + "\n";
+			preamble = "//Files Open : \n";
+			
+			
+			String[] split_name = file_name.split("\\/");
+			String short_name = split_name[split_name.length - 1];
+			
+			(new File("output/" + short_name)).mkdir(); // I assume this'll fail if it exists.
+			
+			try{
+				  // Create file 
+				  FileWriter fstream = new FileWriter(String.format("output/" + short_name + "/" + short_name + "_" + "%03d", count));
+				  BufferedWriter out = new BufferedWriter(fstream);
+				  out.write(preamble + content);
+				  //Close the output stream
+				  out.close();
+			}catch (Exception e){//Catch exception if any
+				  System.err.println("Error: " + e.getMessage());
+			}
+			
+			count++;
+		}
+		
+		public String getContent()
+		{
+			return content;
+		}
+	}
+
+}
