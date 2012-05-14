@@ -234,15 +234,19 @@ public class SmartDiffer {
 	
 	public void handleFile(String file_name1, String file_name2) throws IOException
 	{
-		last_code = parse(file_name1);
-		current_code = parse(file_name2);
 		
-
-
-        TypeDeclaration type1 = current_code.getTypes().get(0);
-        TypeDeclaration type2 = last_code.getTypes().get(0);
-        
-		diffTypes(type1,type2);
+			last_code = parse(file_name1);
+			current_code = parse(file_name2);
+			
+	
+			try{
+		        TypeDeclaration type1 = current_code.getTypes().get(0);
+		        TypeDeclaration type2 = last_code.getTypes().get(0);
+		        
+				diffTypes(type1,type2);
+			}catch(NullPointerException e){
+				System.out.println("PARSE ERROR!");
+			}
 
 	}
 	
@@ -373,7 +377,12 @@ public class SmartDiffer {
             // parse the file
             cu = JavaParser.parse(in);
         } catch(Exception e){
-        	e.printStackTrace();
+        	//e.printStackTrace();
+        	System.out.println("PARSE ERROR");
+        	
+        	Count c = new Count();
+        	c.count = 1;
+        	aggregations.put("ERROR: " + e.getMessage() + "\n" + e.getStackTrace(),c);
         } finally {
             in.close();
         }

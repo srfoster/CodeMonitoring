@@ -1,0 +1,109 @@
+//Time : 2012-04-19 01:33:57.989
+//Files Open : /pvekris/src/main/java/energy/analysis/SpecialConditions.java /pvekris/src/main/java/energy/interproc/CtxSensLocking.java /pvekris/src/main/java/energy/analysis/IntentInvestigation.java /pvekris/src/main/java/energy/interproc/SensibleExplodedInterproceduralCFG.java 
+/*AST Changes :
+CHANGE MethodDeclaration  to MethodDeclaration  = 1
+changes = 1
+changes to method printThreadPairs = 1
+public method declarations = 1
+*/package energy.analysis;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import com.ibm.wala.classLoader.NewSiteReference;
+import com.ibm.wala.ipa.callgraph.CGNode;
+import com.ibm.wala.ssa.DefUse;
+import com.ibm.wala.ssa.IR;
+import com.ibm.wala.ssa.SSAInstruction;
+import com.ibm.wala.ssa.SSAInvokeInstruction;
+import com.ibm.wala.ssa.SSANewInstruction;
+import com.ibm.wala.util.debug.Assertions;
+import energy.components.Component;
+import energy.components.RunnableThread;
+import energy.util.E;
+import energy.util.SSAProgramPoint;
+public class IntentInvestigation {
+  private AppCallGraph cg;
+  private ComponentManager cm;
+  public IntentInvestigation(  ComponentManager componentManager){
+    this.cg=componentManager.getCG();
+    this.cm=componentManager;
+  }
+  HashSet<SSANewInstruction> iSet=new HashSet<SSANewInstruction>();
+  /** 
+ * This will map the point where a thread is spawned to the threads class reference 
+ */
+  private HashMap<SSAProgramPoint,Component> siteToClass=null;
+  /** 
+ * Invoke this to fill up the ProgPoint to thread mapping
+ */
+  private void prepare(){
+    siteToClass=new HashMap<SSAProgramPoint,Component>();
+    for (    CGNode n : cg) {
+      iSet.clear();
+      IR ir=n.getIR();
+      if (ir == null) {
+        E.log(2,"Skipping: " + n.getMethod().toString());
+        continue;
+      }
+      for (Iterator<NewSiteReference> it=ir.iterateNewSites(); it.hasNext(); ) {
+        SSANewInstruction newi=ir.getNew(it.next());
+        if (newi.getConcreteType().toString().equals("<Application,Landroid/content/Intent>")) {
+          iSet.add(newi);
+        }
+      }
+      if (iSet.size() > 0) {
+        DefUse du=new DefUse(ir);
+        for (        SSANewInstruction i : iSet) {
+          SSAProgramPoint pp=null;
+          Component targetComponent=null;
+          for (Iterator<SSAInstruction> uses=du.getUses(i.getDef()); uses.hasNext(); ) {
+            SSAInstruction user=uses.next();
+            if (user instanceof SSAInvokeInstruction) {
+              SSAInvokeInstruction inv=(SSAInvokeInstruction)user;
+              if (inv.getDeclaredTarget().getName().toString().equals("<init>")) {
+                E.log(2,"Initializer: " + n.getMethod().getSignature().toString() + " - "+ inv.toString());
+                try {
+                  int use=inv.getUse(1);
+                  SSAInstruction def=du.getDef(use);
+                  if (def instanceof SSANewInstruction) {
+                    SSANewInstruction inv1=(SSANewInstruction)def;
+                    Assertions.productionAssertion(targetComponent == null);
+                    targetComponent=cm.getComponent(inv1.getConcreteType());
+                    if (targetComponent == null) {
+                      Assertions.productionAssertion(targetComponent instanceof RunnableThread,"Cannot handle circular dependencies in thread calls.");
+                    }
+                  }
+                }
+ catch (                Exception e) {
+                  E.log(1,ir.toString());
+                  e.printStackTrace();
+                }
+              }
+              if (inv.getDeclaredTarget().getName().toString().equals("start")) {
+                assert inv.getNumberOfParameters() == 0;
+                assert pp == null;
+                pp=new SSAProgramPoint(n,inv);
+              }
+            }
+          }
+          if ((pp != null) && (targetComponent != null)) {
+            E.log(2,"Adding: " + pp + " --> "+ targetComponent);
+            siteToClass.put(pp,targetComponent);
+          }
+        }
+      }
+    }
+  }
+  public void printIntents(){
+    for (    Entry<SSAProgramPoint,Component> e : siteToClass.entrySet()) {
+      E.log(1,e.getKey().toString() + " -- > " + e.getValue().toString());
+    }
+  }
+  public HashMap<SSAProgramPoint,Component> getThreadInvocations(){
+    if (siteToClass == null) {
+      prepare();
+    }
+    return siteToClass;
+  }
+}

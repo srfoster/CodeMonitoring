@@ -1,0 +1,17 @@
+//Time : 2012-04-24 19:01:17.878
+//Files Open : /com.ibm.wala.core/src/com/ibm/wala/cfg/ShrikeCFG.java /com.ibm.wala.core/src/com/ibm/wala/cfg/AbstractCFG.java /com.ibm.wala.core/src/com/ibm/wala/ssa/SSACFG.java /com.ibm.wala.core/src/com/ibm/wala/cfg/ControlFlowGraph.java /pvekris/src/main/java/energy/components/Handler.java /pvekris/src/main/java/energy/analysis/AnalysisResults.java /com.ibm.wala.core/src/com/ibm/wala/cfg/CFGSanitizer.java /mcmutton/src/main/java/edu/ucsd/salud/mcmutton/BugHunt.java 
+package energy.components;
+import com.ibm.wala.classLoader.IClass;
+import com.ibm.wala.ipa.callgraph.CGNode;
+import energy.analysis.AppCallGraph;
+public class Handler extends Component {
+  public Handler(  AppCallGraph originalCG,  IClass declaringClass,  CGNode root){
+    super(originalCG,declaringClass,root);
+  }
+  public String toString(){
+    StringBuffer b=new StringBuffer();
+    b.append("Handler: ");
+    b.append(getKlass().getName().toString());
+    return b.toString();
+  }
+}

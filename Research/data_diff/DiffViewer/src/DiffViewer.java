@@ -209,6 +209,7 @@ public class DiffViewer {
 		public String file_name;
 		public String status;
 		private String content;
+		private boolean first = true;
 		
 		
 		public Info()
@@ -225,14 +226,10 @@ public class DiffViewer {
 			
 			(new File("output/" + short_name)).mkdir(); // I assume this'll fail if it exists.
 
-			
-			String last_file_name = String.format("output/" + short_name + "/" + short_name + "_" + "%03d", getLastFileNumber("output/" + short_name + "/"));
 			String file_name = String.format("output/" + short_name + "/" + short_name + "_" + "%03d", getLastFileNumber("output/" + short_name + "/")+1);
 
 			String preamble = "//Time : " + delta_content.getDelta().getCreatedat().toString() + "\n";
-			preamble += "//Files Open :"+ filesOpen()+" \n";
-			preamble += "//AST Changes : " + smartDiff(last_file_name, file_name) + "\n";
-			
+			preamble += "//Files Open :"+ filesOpen()+" \n";			
 			
 			try{
 				  // Create file 
@@ -245,7 +242,15 @@ public class DiffViewer {
 				  System.err.println("Error: " + e.getMessage());
 			}
 			
-			preamble += "//AST Changes : " + smartDiff(last_file_name, file_name) + "\n";
+			if(first)
+			{
+				first = false;
+				return;
+			}
+			
+			String last_file_name = String.format("output/" + short_name + "/" + short_name + "_" + "%03d", getLastFileNumber("output/" + short_name + "/")-1);
+
+			preamble += "/*AST Changes :\n" + smartDiff(file_name, last_file_name) + "*/";
 
 			//Ugly: Save the file twice, so we can save smart diff info.
 			try{

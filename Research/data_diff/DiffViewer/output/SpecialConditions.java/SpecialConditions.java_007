@@ -1,0 +1,145 @@
+//Time : 2012-04-10 02:40:49.298
+//Files Open : /pvekris/src/main/java/energy/interproc/CtxSensLocking.java /pvekris/src/main/java/energy/analysis/SpecialConditions.java /pvekris/src/main/java/energy/analysis/ThreadInvestigation.java 
+/*AST Changes :
+CHANGE ForStmt  to ForStmt  = 2
+CHANGE ForeachStmt  to ForeachStmt  = 1
+CHANGE IfStmt  to IfStmt  = 3
+CHANGE LabeledStmt  to ExpressionStmt IfStmt  = 1
+CHANGE MethodDeclaration  to MethodDeclaration  = 1
+CHANGE SwitchStmt  to SwitchStmt  = 1
+CHANGE TryStmt  to TryStmt  = 1
+changes = 10
+changes to method prepare = 1
+public method declarations = 1
+*/package energy.analysis;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import com.ibm.wala.ipa.callgraph.CGNode;
+import com.ibm.wala.ipa.cha.ClassHierarchy;
+import com.ibm.wala.ssa.DefUse;
+import com.ibm.wala.ssa.IR;
+import com.ibm.wala.ssa.ISSABasicBlock;
+import com.ibm.wala.ssa.SSACFG;
+import com.ibm.wala.ssa.SSAConditionalBranchInstruction;
+import com.ibm.wala.ssa.SSAGetInstruction;
+import com.ibm.wala.ssa.SSAInstruction;
+import com.ibm.wala.ssa.SSAPiInstruction;
+import com.ibm.wala.types.FieldReference;
+import energy.util.E;
+import energy.util.SSAProgramPoint;
+import energy.util.Util;
+/** 
+ * Need to run LockInvestigation before invoking this
+ * @author pvekris
+ */
+public class SpecialConditions {
+  private AppCallGraph cg;
+  private ComponentManager cm;
+  private ClassHierarchy ch;
+  public SpecialConditions(  ComponentManager componentManager){
+    this.cg=componentManager.getCG();
+    this.cm=componentManager;
+  }
+  private HashMap<SSAProgramPoint,SpecialCondition> ppToSpecCondition=null;
+public class SpecialCondition {
+    FieldReference field=null;
+    SpecialCondition(    FieldReference f){
+      this.field=f;
+    }
+  }
+public class IsNullCondition extends SpecialCondition {
+    IsNullCondition(    FieldReference f){
+      super(f);
+    }
+    public String toString(){
+      return "Null Check";
+    }
+  }
+public class IsHeldCondition extends SpecialCondition {
+    IsHeldCondition(    FieldReference f){
+      super(f);
+    }
+    public String toString(){
+      return "Is held";
+    }
+  }
+  public void prepare(){
+    DefUse du=null;
+    ppToSpecCondition=new HashMap<SSAProgramPoint,SpecialCondition>();
+    for (    CGNode n : cg) {
+      SSACFG cfg=n.getIR().getControlFlowGraph();
+      IR ir=n.getIR();
+      for (Iterator<ISSABasicBlock> it=cfg.iterator(); it.hasNext(); ) {
+        ISSABasicBlock bb=it.next();
+        for (Iterator<SSAInstruction> iIter=bb.iterator(); iIter.hasNext(); ) {
+          SSAInstruction instr=iIter.next();
+          if (instr != null) {
+            try {
+              if (instr instanceof SSAConditionalBranchInstruction) {
+                SSAConditionalBranchInstruction cinstr=(SSAConditionalBranchInstruction)instr;
+                Iterator<ISSABasicBlock> succNodesItr=cfg.getSuccNodes(bb);
+                ArrayList<ISSABasicBlock> succNodesArray=Util.iteratorToArrayList(succNodesItr);
+switch (succNodesArray.size()) {
+case 2:
+{
+                    if (du == null) {
+                      du=new DefUse(ir);
+                    }
+                    int use1=cinstr.getUse(0);
+                    int use2=cinstr.getUse(1);
+                    FieldReference field1=getWLFieldFromVal(ir,du,use1);
+                    FieldReference field2=getWLFieldFromVal(ir,du,use2);
+                    if ((field1 != null && ir.getSymbolTable().isNullConstant(use2)) || (field2 != null && ir.getSymbolTable().isNullConstant(use1))) {
+                      SSAProgramPoint pp=new SSAProgramPoint(n,cinstr);
+                      succNodesArray:                       if (field1 != null) {
+                        E.log(1,pp + " |1| " + field1);
+                        ppToSpecCondition.put(pp,new IsNullCondition(field1));
+                      }
+ else {
+                        E.log(1,pp + " |2| " + field2);
+                        ppToSpecCondition.put(pp,new IsNullCondition(field2));
+                      }
+                    }
+                  }
+default :
+                break;
+            }
+          }
+        }
+ catch (        ArrayIndexOutOfBoundsException e) {
+        }
+      }
+    }
+  }
+}
+}
+/** 
+ * Get the field associated with a value in the IR
+ * @param ir
+ * @param du
+ * @param val
+ * @return null if the value is not associated with a wakelock
+ */
+private FieldReference getWLFieldFromVal(IR ir,DefUse du,int val){
+SSAInstruction def=du.getDef(val);
+if (def instanceof SSAGetInstruction) {
+  SSAGetInstruction get=(SSAGetInstruction)def;
+  FieldReference field=get.getDeclaredField();
+  if (cg.getLockFieldInfo().isWakeLock(field)) {
+    return field;
+  }
+  ;
+}
+return null;
+}
+public void setAppCallGraph(AppCallGraph cg){
+this.cg=cg;
+}
+public HashMap<SSAProgramPoint,SpecialCondition> getSpecialConditions(){
+if (ppToSpecCondition == null) {
+  prepare();
+}
+return ppToSpecCondition;
+}
+}

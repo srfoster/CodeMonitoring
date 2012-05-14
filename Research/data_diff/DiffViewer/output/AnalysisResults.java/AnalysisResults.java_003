@@ -1,0 +1,133 @@
+//Time : 2012-04-12 06:35:09.539
+//Files Open : /mcmutton/src/main/java/edu/ucsd/salud/mcmutton/BugHunt.java /pvekris/src/main/java/energy/interproc/CtxSensLocking.java /pvekris/src/main/java/energy/analysis/WakeLockManager.java /pvekris/src/main/java/energy/analysis/Opts.java /pvekris/src/main/java/energy/analysis/SpecialConditions.java /pvekris/src/main/java/energy/analysis/AnalysisResults.java /pvekris/src/main/java/energy/analysis/ComponentManager.java 
+/*AST Changes :
+CHANGE ExpressionStmt  to ExpressionStmt  = 1
+CHANGE MethodDeclaration  to MethodDeclaration  = 1
+changes = 2
+changes to method processResults = 1
+public method declarations = 1
+*/package energy.analysis;
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import com.ibm.wala.types.FieldReference;
+import com.ibm.wala.util.collections.Pair;
+import energy.components.Component;
+import energy.interproc.CompoundLockState;
+import energy.interproc.SingleLockState;
+import energy.util.E;
+public class AnalysisResults {
+  private HashSet<Pair<Component,Map<String,Map<FieldReference,Set<SingleLockState>>>>> resultStuff=null;
+public class ComponentResult {
+    HashMap<String,CompoundLockState> callBackExitStates;
+    public ComponentResult(){
+      callBackExitStates=new HashMap<String,CompoundLockState>();
+    }
+  }
+  /** 
+ * The constructor
+ */
+  AnalysisResults(){
+    resultStuff=new HashSet<Pair<Component,Map<String,Map<FieldReference,Set<SingleLockState>>>>>();
+    callBackResultMap=new HashMap<Pair<String,String>,EnumMap<LockUsage,Integer>>();
+  }
+  int threadCount=0;
+  int activityCount=0;
+  int lockThreads=0;
+  int nolockThreads=0;
+  int unlockThreads=0;
+  int lockunlockThreads=0;
+  public enum LockUsage {  LOCKING,   UNLOCKING,   NOLOCKING,   LOCKUNLOCK,   EMPTY,   UNKNOWN_STATE,   FULL_UNLOCKING}
+  private Map<Pair<String,String>,EnumMap<LockUsage,Integer>> callBackResultMap;
+  public void registerExitLockState(  Component component,  Map<String,Map<FieldReference,Set<SingleLockState>>> map){
+    resultStuff.add(Pair.make(component,map));
+    StringBuffer sb=new StringBuffer();
+    for (    Entry<String,Map<FieldReference,Set<SingleLockState>>> e : map.entrySet()) {
+      if (e.getValue().size() > 0) {
+        sb.append(e.getKey() + "\n");
+        for (        Entry<FieldReference,Set<SingleLockState>> entry : e.getValue().entrySet()) {
+          sb.append(entry.getKey() + " -> " + entry.getValue().toString());
+        }
+      }
+    }
+    if (sb.length() > 0) {
+      E.log(1,component.toString() + "\n" + sb.toString());
+    }
+  }
+  private LockUsage getLockUsage(  SingleLockState runState){
+    if (runState != null) {
+      if (runState.isMaybeAcquired() && (!runState.isMaybeReleased())) {
+        return LockUsage.LOCKING;
+      }
+ else       if (!runState.isMaybeReleased() && (!runState.isMaybeAcquired())) {
+        return LockUsage.EMPTY;
+      }
+ else       if (runState.isMaybeReleased() && (!runState.isMaybeAcquired())) {
+        return LockUsage.FULL_UNLOCKING;
+      }
+ else       if (runState.isMaybeReleased()) {
+        return LockUsage.UNLOCKING;
+      }
+ else {
+        return LockUsage.UNKNOWN_STATE;
+      }
+    }
+ else {
+      return LockUsage.EMPTY;
+    }
+  }
+  public void processResults(){
+    System.out.println("");
+    for (    Pair<Component,Map<String,Map<FieldReference,Set<SingleLockState>>>> pair : resultStuff) {
+      Component component=pair.fst;
+      String componentName=component.getComponentName();
+      Map<String,Map<FieldReference,Set<SingleLockState>>> callBackMap=pair.snd;
+      for (      Entry<String,Map<FieldReference,Set<SingleLockState>>> e : callBackMap.entrySet()) {
+        String callBackName=e.getKey();
+        Pair<String,String> compAndCB=Pair.make(component.toString(),callBackName);
+        Pair<String,String> abstCompAndCB=Pair.make(componentName,callBackName);
+        HashMap<FieldReference,LockUsage> lockUsages=new HashMap<FieldReference,LockUsage>();
+        for (        Entry<FieldReference,Set<SingleLockState>> fs : e.getValue().entrySet()) {
+          FieldReference field=fs.getKey();
+          Set<SingleLockState> sls=fs.getValue();
+          SingleLockState sl=SingleLockState.mergeSingleLockStates(sls);
+          LockUsage lockUsage=getLockUsage(sl);
+          lockUsages.put(field,lockUsage);
+          EnumMap<LockUsage,Integer> enumMap=callBackResultMap.get(abstCompAndCB);
+          if (lockUsage != LockUsage.EMPTY) {
+            E.log(1,compAndCB.toString() + " :: " + lockUsage.toString());
+          }
+          updateEnumMap(enumMap,lockUsage);
+        }
+      }
+    }
+  }
+  private void updateEnumMap(  EnumMap<LockUsage,Integer> enumMap,  LockUsage lockUsage){
+    if (enumMap == null) {
+      enumMap=new EnumMap<LockUsage,Integer>(LockUsage.class);
+    }
+    Integer count=enumMap.get(lockUsage);
+    if (count == null) {
+      count=new Integer(1);
+      enumMap.put(lockUsage,count);
+    }
+ else {
+      enumMap.put(lockUsage,count + 1);
+    }
+  }
+  public void outputFinalResults(){
+    for (    Entry<Pair<String,String>,EnumMap<LockUsage,Integer>> e : callBackResultMap.entrySet()) {
+      Pair<String,String> key=e.getKey();
+      E.log(1,key.toString());
+      EnumMap<LockUsage,Integer> usages=e.getValue();
+      for (      Entry<LockUsage,Integer> u : usages.entrySet()) {
+        LockUsage usage=u.getKey();
+        Integer count=u.getValue();
+        E.log(1,"--> " + usage.toString() + " :: "+ count.toString());
+      }
+    }
+  }
+}
